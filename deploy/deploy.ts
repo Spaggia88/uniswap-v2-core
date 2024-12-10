@@ -8,7 +8,7 @@ const deployFunction: DeployFunction = async function (hre: HardhatRuntimeEnviro
   const chain = await getChain(network.provider)
   const deployer = (await getNamedAccounts())['deployer'] as Address
 
-  if (await deployments.getOrNull('Minter')) {
+  if (await deployments.getOrNull('UniswapV2Factory')) {
     return
   }
 
